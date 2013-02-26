@@ -1,4 +1,4 @@
-# CSS3 Github Ribbon
+# CSS3 Github Ribbon (SCSS version)
 
 Use this CSS3 Github Ribbon on your github-based projects, it's fully customizable!
 
@@ -10,40 +10,33 @@ Just link `css3-github-ribbon.css` on your html document and paste the github li
 <a href="https://github.com/dciccale/css3-github-ribbon" class="github-ribbon">Fork me on GitHub</a>
 ```
 
-### [Live demo](http://dciccale.github.com/css3-github-ribbon/)
+### [Live demo](http://xdite.github.com/scss-css3-github-ribbon/)
 
 ## Options
-You will need [Stylus](http://learnboost.github.com/stylus/) and [Node.js](http://nodejs.org/) to compile the modified `.styl` file
+
+You will need [Compass] and [SCSS] to compile the modified `.scss` file
 
 ### Background color
 Change the `$background-color` variable to any valid CSS color.
 
-```php
-$background black
+``` scss
+$background:black;
 ```
 
 #### Text color
 Change the `$color` variable to any valid CSS color.
 
-```php
-$color white
+``` scss
+$color:white;
+
 ```
 
 #### Position
 Change the `$position` variable to one of these two values: 'top-right' (default) or 'top-left'.
 
-```php
-$position 'top-right'
-```
-
-### Known issues and fixes
- - Unintended horizontal scrolling can cut the edges of the ribbon
-
-To fix this add the following code to the .styl file
-```
-body
-  overflow-x none
+``` scss
+$position:'top-right';
 ```
 
 ## License
-See [LICENSE.txt](https://raw.github.com/dciccale/css3-github-ribbon/master/LICENSE.txt)
+See [LICENSE.txt](https://raw.github.com/xdite/scss-css3-github-ribbon/master/LICENSE.txt)
