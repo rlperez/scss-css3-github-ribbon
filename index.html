@@ -1,4 +1,141 @@
 <!doctype html>
-  <title>CSS3 Github ribbon</title>
-  <link href="css3-github-ribbon.css" rel="stylesheet" />
-  <a href="https://github.com/xdite/scss-css3-github-ribbon" class="github-ribbon">Fork me on GitHub</a>
+<title>CSS3 Github ribbon</title>
+<link href="css3-github-ribbon.css" rel="stylesheet" />
+
+<link href="http://belelros.github.com/jQuery-ColorPicker/css/colorpicker.css" rel="stylesheet" />
+
+
+<!--
+<link href="http://belelros.github.com/jQuery-ColorPicker/css/page.css" rel="stylesheet" />
+!-->
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url('http://belelros.github.com/jQuery-ColorPicker/images/pattern.png');
+  font-family: Calibri, Verdana, Ariel, sans-serif; 
+}
+
+#wrapper {
+  width: 900px;
+  margin: 0 auto;
+  padding: 20px 0;
+
+}
+
+
+#wrapper h3 {
+  color : grey;
+
+}
+#colorselector {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 36px;
+  height: 36px;
+  background: url(http://belelros.github.com/jQuery-ColorPicker/images/select2.png);
+}
+#colorselector div {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 28px;
+  height: 28px;
+  background: url(http://belelros.github.com/jQuery-ColorPicker/images/select2.png) center;
+}
+#colorpickerholder2 {
+  top: 32px;
+  left: 0;
+  width: 356px;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+}
+.colorpickerholder2 .colorpicker input {
+  color: #778398;
+}
+#customWidget {
+  position: relative;
+  height: 36px;
+}
+
+.colorselector {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  background: url(http://belelros.github.com/jQuery-ColorPicker/images/select.png);
+}
+
+.colorselector div {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 30px;
+  height: 30px;
+  background: url(http://belelros.github.com/jQuery-ColorPicker/images/select.png) center;
+}
+
+</style>
+<body>
+
+  <div id="wrapper">
+    <a href="https://github.com/xdite/scss-css3-github-ribbon" class="github-ribbon">Fork me on GitHub</a>
+
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script src="http://belelros.github.com/jQuery-ColorPicker/js/colorpicker.min.js"></script>
+
+    <div>
+     <h3> Font Color:</h3>
+      <div id="colorselector1" class="colorselector">
+         <div style="background-color: #EFEFEF"></div>
+      </div>
+    </div>
+
+
+    <div>
+      <h3> Background Color:</h3>
+
+    <div id="colorselector2" class="colorselector">
+       <div style="background-color: #000000"></div>
+    </div>
+
+    </div>
+  </div>
+  <script>
+  $(function(){
+     $('#colorselector1').ColorPicker({
+      color: '#EFEFEF',
+      onShow: function (colpkr) {
+        $(colpkr).fadeIn(500);
+        return false;
+      },
+      onHide: function (colpkr) {
+        $(colpkr).fadeOut(500);
+      },
+      onChange: function (hsb, hex, rgb) {
+        $('.github-ribbon').css('color', '#' + hex);
+      }
+    });
+
+     $('#colorselector2').ColorPicker({
+      color: '#000000',
+      onShow: function (colpkr) {
+        $(colpkr).fadeIn(500);
+        return false;
+      },
+      onHide: function (colpkr) {
+        $(colpkr).fadeOut(500);
+      },
+      onChange: function (hsb, hex, rgb) {
+        $('.github-ribbon').css('backgroundColor', '#' + hex);
+      }
+    });
+
+  });
+
+
+  </script>
+
+</body>
